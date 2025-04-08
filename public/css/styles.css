@@ -1,0 +1,219 @@
+.bg-dark {
+  background-color: rgba(54, 55, 64, 1) !important;
+}
+
+.d-flex {
+  flex-shrink: 1 !important;
+  width: auto;
+}
+
+.text-white {
+  color: #A4A6B3 !important;
+}
+
+a.nav-link.text-white:hover {
+  color: #DDE2FF !important; 
+}
+
+.nav-item {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.nav-item svg {
+  margin-right: 10px;
+}
+
+.nav-item span {
+  display: flex;
+  align-items: center;
+}
+
+li.nav-item {
+  --color: #9FA2B4; /* Default SVG color */
+}
+
+#menu li.nav-item svg path {
+  fill: var(--color); /* svg color */
+}
+
+#menu li.nav-item:hover {
+  background-color: #495057;
+  cursor: pointer;
+  color: #DDE2FF !important; /* finally works */
+  border-left: 3px solid rgba(221, 226, 255, 1);
+}
+
+#menu li.nav-item:hover svg path {
+  fill: #DDE2FF !important; /* not working idk */
+}
+
+#active {
+  border-left: 3px solid #DDE2FF;
+  background-color: rgba(159, 162, 180, 0.08);
+  height: 56px;
+}
+
+/* Divider line for sidebar*/
+#solid {
+  width: 100%;
+  padding: none;
+  height: 1px;
+  background-color: #DFE0EB;
+  margin: 10px 0;
+  border: none;
+}
+
+#mynavbar {
+  flex-grow: 0 !important;
+}
+
+.navbar-brand {
+  margin-left: 10px;
+  font-size: 18px;
+  margin-bottom: 65px;
+}
+
+.container-fluid {
+  padding: 0;
+  align-items: center;
+  background-color: rgba(247, 248, 252, 1);
+  overflow-x: hidden;
+}
+
+.card {
+  text-align: center;
+  width: 100%;
+}
+
+.card:hover {
+  cursor: pointer;
+  color: rgba(55, 81, 255, 1);
+  border-color: rgba(55, 81, 255, 1);
+}
+
+#unresolved,
+#open,
+#overdue,
+#hold {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.fs-9 {
+  font-size: 0.5rem !important; /* 8px */
+}
+
+.card-header>p {
+  margin-right: 75%;
+}
+
+#graphtitle {
+  color: rgba(37, 39, 51, 1);
+  padding-top: 3px;
+  margin-right: 75%;
+  font-size: 19px;
+}
+/* change notes size*/
+.float-right-1 img {
+  float: right;
+  width: 25%; 
+}
+/* change graph size*/
+
+.float-right-2 img {
+  float: right;
+}
+
+/* fill graph container */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* fix additional info */
+.same-size {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.graphtext {
+  color: rgba(159, 162, 180, 1);
+  margin-right: 65%;
+  font-size: 12px;
+}
+
+.text-small {
+  color: rgba(159, 162, 180, 1);
+  margin-right: 65%;
+  font-size: 12px;
+  text-decoration: none;
+  text-emphasis: none;
+}
+
+#create {
+  color: rgba(159, 162, 180, 1);
+}
+
+/* expand cards */
+.card-graph {
+  flex-grow: 1;
+}
+
+.col-md-5 {
+  border-left: 1px solid #DFE0EB;
+}
+
+#graph {
+  width: 100%;
+}
+
+/* Vertical rule styling */
+.vr {
+  border-left: 1px solid #DFE0EB;
+  height: 100%;
+}
+
+/* no horizontal scroll */
+.row.flex-nowrap {
+  width: 100%;
+  height: auto;
+  overflow-x: auto;
+}
+
+.card-body h6 {
+  color: #9FA2B4 !important;
+}
+/* change title color for graph */
+h6.card-title-graph {
+  color: #252733 !important; 
+  font-size: 1.25rem; 
+  font-weight: 700; 
+  margin-bottom: 1rem; 
+}
+p.card-text-graph{
+  color: #9FA2B4 !important;
+  
+}
+.card-body h5{
+  color: #9FA2B4 !important;
+}
+.display-4{
+  color: #252733 !important;
+}
+
+a.nav-link-overview{
+  color: #252733 !important;
+  text-decoration: none;
+}
+
+.navbar-nav{
+  --bs-nav-link-padding-y: 0 !important;
+  --bs-nav-link-padding-x: 0 !important;
+}
