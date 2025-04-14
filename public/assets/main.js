@@ -121,9 +121,10 @@ if (menu) {
     `
   };
 
-  content.navItems.forEach((item) => {
-    const li = document.createElement("li");
-    li.className = "nav-item";
+// Skip the first item (Dashboard Kit) when populating the sidebar
+content.navItems.slice(1).forEach((item) => {
+  const li = document.createElement("li");
+  li.className = "nav-item";
   
     // Use item.icon to fetch the corresponding SVG
     li.innerHTML = `
@@ -132,7 +133,7 @@ if (menu) {
         <span class="ms-1 d-none d-sm-inline">${item.text}</span>
       </a>
     `;
-    
+
     menu.appendChild(li);
   
     // Add the <hr> element after "Articles"
