@@ -40,6 +40,25 @@ li.nav-item {
   fill: var(--color); /* Apply default color */
 }
 
+.dashboard-link {
+  display: flex;
+  align-items: center; /* Vertically align SVG and text */
+  padding: 0.5rem 1rem; /* Add padding around the link */
+}
+
+.dashboard-link svg {
+  margin-right: 8px; /* Add spacing between the SVG and text */
+}
+
+.navbar {
+  display: flex;
+  align-items: center; /* Vertically align items in the navbar */
+  padding: 0.5rem 1rem; /* Ensure consistent padding with Dashboard Kit */
+}
+
+.d-flex.align-items-center {
+  gap: 8px; /* Add consistent spacing between items */
+}
 #menu li.nav-item:hover {
   background-color: #495057;
   cursor: pointer;

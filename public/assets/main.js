@@ -17,28 +17,30 @@ async function loadContent(jsonPath) {
       dashboardLink.className =
         "d-flex align-items-center p-3 justify-content-around pt-4 mb-md-0 me-md-auto mt-4 text-white text-decoration-none fs-4";
       dashboardLink.innerHTML = `
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="16" fill="#3751FF" />
-          <path
-            d="M11 10C11 9.44772 11.4477 9 12 9H15.9905C18.2127 9 19.9333 9.60955 21.1524 10.8287C22.3841 12.0478 23 13.765 23 15.9803C23 18.2088 22.3841 19.9391 21.1524 21.1713C19.9333 22.3904 18.2127 23 15.9905 23H12C11.4477 23 11 22.5523 11 22V10Z"
-            fill="url(#paint0_linear_584_285)" />
-          <defs>
-            <linearGradient id="paint0_linear_584_285" x1="11" y1="9" x2="23" y2="23" gradientUnits="userSpaceOnUse">
-              <stop stop-color="white" stop-opacity="0.7" />
-              <stop offset="1" stop-color="white" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <span>Dashboard Kit</span>
+          <div class="d-flex align-items-center">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="16" fill="#3751FF" />
+      <path
+        d="M11 10C11 9.44772 11.4477 9 12 9H15.9905C18.2127 9 19.9333 9.60955 21.1524 10.8287C22.3841 12.0478 23 13.765 23 15.9803C23 18.2088 22.3841 19.9391 21.1524 21.1713C19.9333 22.3904 18.2127 23 15.9905 23H12C11.4477 23 11 22.5523 11 22V10Z"
+        fill="url(#paint0_linear_584_285)" />
+      <defs>
+        <linearGradient id="paint0_linear_584_285" x1="11" y1="9" x2="23" y2="23" gradientUnits="userSpaceOnUse">
+          <stop stop-color="white" stop-opacity="0.7" />
+          <stop offset="1" stop-color="white" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <span class="ms-2">Dashboard Kit</span>
+  </div>
       `;
       dashboardContainer.prepend(dashboardLink); // Add Dashboard Kit at the top
     }
 
-   // Populate Sidebar Navigation (navItems)
-const menu = document.getElementById("menu");
-if (menu) {
-  const svgIcons = {
-    overview: `
+    // Populate Sidebar Navigation (navItems)
+    const menu = document.getElementById("menu");
+    if (menu) {
+      const svgIcons = {
+        overview: `
       <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_584_253)">
                     <path
@@ -52,14 +54,14 @@ if (menu) {
                 </svg>
 
     `,
-    tickets: `
+        tickets: `
       <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <path opacity="0.4"
                     d="M3.55556 5.33334H12.4444V10.6667H3.55556V5.33334ZM14.6667 8C14.6667 8.73639 15.2636 9.33334 16 9.33334V12C16 12.7364 15.4031 13.3333 14.6667 13.3333H1.33333C0.596944 13.3333 0 12.7364 0 12V9.33334C0.736389 9.33334 1.33333 8.73639 1.33333 8C1.33333 7.26362 0.736389 6.66667 0 6.66667V4.00001C0 3.26362 0.596944 2.66667 1.33333 2.66667H14.6667C15.4031 2.66667 16 3.26362 16 4.00001V6.66667C15.2636 6.66667 14.6667 7.26362 14.6667 8ZM13.3333 5.11112C13.3333 4.74292 13.0349 4.44445 12.6667 4.44445H3.33333C2.96514 4.44445 2.66667 4.74292 2.66667 5.11112V10.8889C2.66667 11.2571 2.96514 11.5556 3.33333 11.5556H12.6667C13.0349 11.5556 13.3333 11.2571 13.3333 10.8889V5.11112Z" />
                 </svg>
 
     `,
-    ideas: `
+        ideas: `
      <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_584_261)">
                     <path opacity="0.4"
@@ -73,25 +75,25 @@ if (menu) {
                 </svg>
 
     `,
-    contacts: `
+        contacts: `
      <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <path opacity="0.4"
                     d="M2.4 7.2C3.2825 7.2 4 6.4825 4 5.6C4 4.7175 3.2825 4 2.4 4C1.5175 4 0.8 4.7175 0.8 5.6C0.8 6.4825 1.5175 7.2 2.4 7.2ZM13.6 7.2C14.4825 7.2 15.2 6.4825 15.2 5.6C15.2 4.7175 14.4825 4 13.6 4C12.7175 4 12 4.7175 12 5.6C12 6.4825 12.7175 7.2 13.6 7.2ZM14.4 8H12.8C12.36 8 11.9625 8.1775 11.6725 8.465C12.68 9.0175 13.395 10.015 13.55 11.2H15.2C15.6425 11.2 16 10.8425 16 10.4V9.6C16 8.7175 15.2825 8 14.4 8ZM8 8C9.5475 8 10.8 6.7475 10.8 5.2C10.8 3.6525 9.5475 2.4 8 2.4C6.4525 2.4 5.2 3.6525 5.2 5.2C5.2 6.7475 6.4525 8 8 8ZM9.92 8.8H9.7125C9.1925 9.05 8.615 9.2 8 9.2C7.385 9.2 6.81 9.05 6.2875 8.8H6.08C4.49 8.8 3.2 10.09 3.2 11.68V12.4C3.2 13.0625 3.7375 13.6 4.4 13.6H11.6C12.2625 13.6 12.8 13.0625 12.8 12.4V11.68C12.8 10.09 11.51 8.8 9.92 8.8ZM4.3275 8.465C4.0375 8.1775 3.64 8 3.2 8H1.6C0.7175 8 0 8.7175 0 9.6V10.4C0 10.8425 0.3575 11.2 0.8 11.2H2.4475C2.605 10.015 3.32 9.0175 4.3275 8.465Z" />
                 </svg>
     `,
-    agents: `
+        agents: `
       <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <path opacity="0.4"
                     d="M8 8C10.2094 8 12 6.20937 12 4C12 1.79063 10.2094 0 8 0C5.79063 0 4 1.79063 4 4C4 6.20937 5.79063 8 8 8ZM10.9937 9.01875L9.5 15L8.5 10.75L9.5 9H6.5L7.5 10.75L6.5 15L5.00625 9.01875C2.77812 9.125 1 10.9469 1 13.2V14.5C1 15.3281 1.67188 16 2.5 16H13.5C14.3281 16 15 15.3281 15 14.5V13.2C15 10.9469 13.2219 9.125 10.9937 9.01875Z" />
                 </svg>
     `,
-    articles: `
+        articles: `
       <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <path opacity="0.4"
                     d="M15 11.25V0.75C15 0.334375 14.6656 0 14.25 0H4C2.34375 0 1 1.34375 1 3V13C1 14.6562 2.34375 16 4 16H14.25C14.6656 16 15 15.6656 15 15.25V14.75C15 14.5156 14.8906 14.3031 14.7219 14.1656C14.5906 13.6844 14.5906 12.3125 14.7219 11.8313C14.8906 11.6969 15 11.4844 15 11.25ZM5 4.1875C5 4.08437 5.08437 4 5.1875 4H11.8125C11.9156 4 12 4.08437 12 4.1875V4.8125C12 4.91563 11.9156 5 11.8125 5H5.1875C5.08437 5 5 4.91563 5 4.8125V4.1875ZM5 6.1875C5 6.08437 5.08437 6 5.1875 6H11.8125C11.9156 6 12 6.08437 12 6.1875V6.8125C12 6.91563 11.9156 7 11.8125 7H5.1875C5.08437 7 5 6.91563 5 6.8125V6.1875ZM12.9187 14H4C3.44688 14 3 13.5531 3 13C3 12.45 3.45 12 4 12H12.9187C12.8594 12.5344 12.8594 13.4656 12.9187 14Z" />
                 </svg>
     `,
-    settings: `
+        settings: `
       <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_584_277)">
                     <path opacity="0.4"
@@ -105,7 +107,7 @@ if (menu) {
                 </svg>
 
     `,
-    subscription: `
+        subscription: `
        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_584_281)">
                     <path opacity="0.4"
@@ -119,45 +121,45 @@ if (menu) {
                 </svg>
 
     `
-  };
+      };
 
-// Skip the first item (Dashboard Kit) when populating the sidebar
-content.navItems.slice(1).forEach((item) => {
-  const li = document.createElement("li");
-  li.className = "nav-item";
-  
-    // Use item.icon to fetch the corresponding SVG
-    li.innerHTML = `
+      // Skip the first item (Dashboard Kit) when populating the sidebar
+      content.navItems.slice(1).forEach((item) => {
+        const li = document.createElement("li");
+        li.className = "nav-item m-3";
+
+        // Use item.icon to fetch the corresponding SVG
+        li.innerHTML = `
       <a href="${item.link}" class="nav-link text-white">
         ${svgIcons[item.icon] || ""} <!-- Use the SVG if it exists -->
         <span class="ms-1 d-none d-sm-inline">${item.text}</span>
       </a>
     `;
 
-    menu.appendChild(li);
-  
-    // Add the <hr> element after "Articles"
-    if (item.text === "Articles") {
-      const hr = document.createElement("hr");
-      hr.id = "solid";
-      hr.style.border = "1px solid #ffffff"; // Optional: Add inline styles for visibility
-      menu.appendChild(hr);
-    }
-  });
+        menu.appendChild(li);
 
- 
+        // Add the <hr> element after "Articles"
+        if (item.text === "Articles") {
+          const hr = document.createElement("hr");
+          hr.id = "solid";
+          hr.style.border = "1px solid #ffffff"; // Optional: Add inline styles for visibility
+          menu.appendChild(hr);
+        }
+      });
 
-    // Populate Navbar Brand
-    const navbarBrand = document.getElementById("navbar-brand");
-    if (navbarBrand) {
-      navbarBrand.textContent = content.navbar.brand.text;
-      navbarBrand.href = content.navbar.brand.link;
-    }
-    // Populate Navbar
-    const navbarLinks = document.getElementById("navbar-links");
-    if (navbarLinks) {
-      const svgs = {
-        "circle-icon": `
+
+
+      // Populate Navbar Brand
+      const navbarBrand = document.getElementById("navbar-brand");
+      if (navbarBrand) {
+        navbarBrand.textContent = content.navbar.brand.text;
+        navbarBrand.href = content.navbar.brand.link;
+      }
+      // Populate Navbar
+      const navbarLinks = document.getElementById("navbar-links");
+      if (navbarLinks) {
+        const svgs = {
+          "circle-icon": `
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_584_242)">
               <circle cx="6.5" cy="6.5" r="5.75" stroke="#C5C7CD" stroke-width="1.5" />
@@ -170,7 +172,7 @@ content.navItems.slice(1).forEach((item) => {
             </defs>
           </svg>
         `,
-        "bell-icon": `
+          "bell-icon": `
           <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M7.99999 19C9.10374 19 9.99905 18.1047 9.99905 17H6.00093C6.00093 18.1047 6.89624 19 7.99999 19ZM14.7309 14.3216C14.1272 13.6728 12.9975 12.6969 12.9975 9.5C12.9975 7.07188 11.295 5.12812 8.99937 4.65125V4C8.99937 3.44781 8.55187 3 7.99999 3C7.44812 3 7.00062 3.44781 7.00062 4V4.65125C4.70499 5.12812 3.00249 7.07188 3.00249 9.5C3.00249 12.6969 1.8728 13.6728 1.26905 14.3216C1.08155 14.5231 0.998429 14.7641 0.999991 15C1.00343 15.5125 1.40562 16 2.00312 16H13.9969C14.5944 16 14.9969 15.5125 15 15C15.0016 14.7641 14.9184 14.5228 14.7309 14.3216Z"
@@ -178,12 +180,12 @@ content.navItems.slice(1).forEach((item) => {
             <circle cx="13" cy="5" r="3.75" fill="#3751FF" stroke="#F7F8FC" stroke-width="1.5" />
           </svg>
         `,
-        "vertical-line": `
+          "vertical-line": `
           <svg width="2" height="32" viewBox="0 0 2 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 0V32" stroke="#DFE0EB" />
           </svg>
         `,
-        "photo-icon": `
+          "photo-icon": `
          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <mask id="mask0_584_231" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="40" height="40">
 <circle cx="24" cy="24" r="20" fill="#C4C4C4"/>
@@ -201,35 +203,35 @@ content.navItems.slice(1).forEach((item) => {
 </svg>
 
         `
-      };
+        };
 
-      content.navbar.links.forEach((link) => {
-        const li = document.createElement("li");
-        li.className = "nav-main";
+        content.navbar.links.forEach((link) => {
+          const li = document.createElement("li");
+          li.className = "nav-main";
 
-        if (link.type === "icon" || link.type === "divider") {
-          li.innerHTML = `
+          if (link.type === "icon" || link.type === "divider") {
+            li.innerHTML = `
             <a class="nav-link" href="${link.link}">
               ${svgs[link.svg] || ""}
             </a>
           `;
-        } else if (link.type === "text") {
-          li.innerHTML = `
+          } else if (link.type === "text") {
+            li.innerHTML = `
             <a class="nav-link-overview" href="${link.link}">${link.text}</a>
           `;
-        }
+          }
 
-        navbarLinks.appendChild(li);
-      });
-    }
+          navbarLinks.appendChild(li);
+        });
+      }
 
-    // Populate Cards
-    const cardsContainer = document.getElementById("cards-container");
-    if (cardsContainer) {
-      content.cards.forEach((card) => {
-        const cardElement = document.createElement("div");
-        cardElement.className = "col-sm-6 col-md-3 mb-3";
-        cardElement.innerHTML = `
+      // Populate Cards
+      const cardsContainer = document.getElementById("cards-container");
+      if (cardsContainer) {
+        content.cards.forEach((card) => {
+          const cardElement = document.createElement("div");
+          cardElement.className = "col-sm-6 col-md-3 mb-3";
+          cardElement.innerHTML = `
           <div class="card text-center">
             <div class="card-body">
               <h5 class="card-title">${card.title}</h5>
@@ -237,14 +239,14 @@ content.navItems.slice(1).forEach((item) => {
             </div>
           </div>
         `;
-        cardsContainer.appendChild(cardElement);
-      });
-    }
+          cardsContainer.appendChild(cardElement);
+        });
+      }
 
-    // Populate Trends
-    const trendsContainer = document.getElementById("trends-container");
-    if (trendsContainer) {
-      trendsContainer.innerHTML = `
+      // Populate Trends
+      const trendsContainer = document.getElementById("trends-container");
+      if (trendsContainer) {
+        trendsContainer.innerHTML = `
         <div class="row">
           <div class="col-md-12">
             <div class="card mb-2">
@@ -264,16 +266,16 @@ content.navItems.slice(1).forEach((item) => {
                   <div class="col-md-5 col-lg-4 col-xl-5">
                     <div class="d-flex flex-column h-100">
                       ${content.trends.metrics
-          .map(
-            (metric) => `
+            .map(
+              (metric) => `
                           <div class="mb-3 same-size d-flex flex-column justify-content-center">
                             <h6 class="card-subtitle mb-2 text-body-secondary text-center">${metric.title}</h6>
                             <p class="card-text display-4 fw-bold text-center">${metric.value}</p>
                           </div>
                           <hr>
                         `
-          )
-          .join("")}
+            )
+            .join("")}
                     </div>
                   </div>
                 </div>
@@ -282,12 +284,18 @@ content.navItems.slice(1).forEach((item) => {
           </div>
         </div>
       `;
+      }
     }
-  }
-  // Close the try block properly
+
+
+
+
+
+
+    // Close the try block properly
   } catch (error) {
-  console.error("Error loading content:", error);
-}
+    console.error("Error loading content:", error);
+  }
 }
 // Call the function after DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
