@@ -121,17 +121,18 @@ if (menu) {
     `
   };
 
-  content.navItems.slice(1).forEach((item, index) => {
+  content.navItems.forEach((item) => {
     const li = document.createElement("li");
     li.className = "nav-item";
+  
+    // Use item.icon to fetch the corresponding SVG
     li.innerHTML = `
       <a href="${item.link}" class="nav-link text-white">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="var(--color)" xmlns="http://www.w3.org/2000/svg">
-          ${svgIcons[item.id] || ""}
-        </svg>
+        ${svgIcons[item.icon] || ""} <!-- Use the SVG if it exists -->
         <span class="ms-1 d-none d-sm-inline">${item.text}</span>
       </a>
     `;
+    
     menu.appendChild(li);
   
     // Add the <hr> element after "Articles"
