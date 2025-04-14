@@ -66,10 +66,10 @@ li.nav-item {
   margin: 10px 0;
   border: none;
 }
-
+/* 
 #mynavbar {
   flex-grow: 0 !important;
-}
+} */
 
 .navbar-brand {
   margin-left: 10px;

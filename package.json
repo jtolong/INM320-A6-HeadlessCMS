@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "joy tolong",
   "license": "ISC",
-  "description": "",
+  "description": "inm 320 a6 headless cms",
   "devDependencies": {
     "lite-server": "^2.6.1"
   }
