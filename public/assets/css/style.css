@@ -12,7 +12,7 @@
 }
 
 a.nav-link.text-white:hover {
-  color: #DDE2FF !important; 
+  color: #DDE2FF !important; /* Ensure the color changes on hover */
 }
 
 .nav-item {
@@ -37,18 +37,18 @@ li.nav-item {
 }
 
 #menu li.nav-item svg path {
-  fill: var(--color); /* svg color */
+  fill: var(--color); /* Apply default color */
 }
 
 #menu li.nav-item:hover {
   background-color: #495057;
   cursor: pointer;
-  color: #DDE2FF !important; /* finally works */
+  color: #DDE2FF !important; /* Ensure the color changes on hover */
   border-left: 3px solid rgba(221, 226, 255, 1);
 }
 
 #menu li.nav-item:hover svg path {
-  fill: #DDE2FF !important; /* not working idk */
+  fill: #DDE2FF !important; /* Change SVG color on hover */
 }
 
 #active {
@@ -57,7 +57,7 @@ li.nav-item {
   height: 56px;
 }
 
-/* Divider line for sidebar*/
+/* Divider line set width height color and spacing */
 #solid {
   width: 100%;
   padding: none;
@@ -66,10 +66,10 @@ li.nav-item {
   margin: 10px 0;
   border: none;
 }
-/* 
+
 #mynavbar {
   flex-grow: 0 !important;
-} */
+}
 
 .navbar-brand {
   margin-left: 10px;
@@ -117,25 +117,24 @@ li.nav-item {
   margin-right: 75%;
   font-size: 19px;
 }
-/* change notes size*/
+
 .float-right-1 img {
   float: right;
-  width: 25%; 
+  width: 25%; /* Adjust the width as needed */
 }
-/* change graph size*/
 
 .float-right-2 img {
   float: right;
 }
 
-/* fill graph container */
+/* Ensure the card fills the height of the container */
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* fix additional info */
+/* Ensure the same-size divs are evenly spaced */
 .same-size {
   flex: 1;
   display: flex;
@@ -161,7 +160,7 @@ li.nav-item {
   color: rgba(159, 162, 180, 1);
 }
 
-/* expand cards */
+/* Flex-grow for the graph card to make it expand */
 .card-graph {
   flex-grow: 1;
 }
@@ -180,7 +179,7 @@ li.nav-item {
   height: 100%;
 }
 
-/* no horizontal scroll */
+/* Allow horizontal scrolling for rows */
 .row.flex-nowrap {
   width: 100%;
   height: auto;
@@ -190,12 +189,12 @@ li.nav-item {
 .card-body h6 {
   color: #9FA2B4 !important;
 }
-/* change title color for graph */
+
 h6.card-title-graph {
-  color: #252733 !important; 
-  font-size: 1.25rem; 
-  font-weight: 700; 
-  margin-bottom: 1rem; 
+  color: #252733 !important; /* Adjust the color as needed */
+  font-size: 1.25rem; /* Adjust the font size as needed */
+  font-weight: 700; /* Adjust the font weight as needed */
+  margin-bottom: 1rem; /* Adjust the margin as needed */
 }
 p.card-text-graph{
   color: #9FA2B4 !important;
