@@ -1,0 +1,125 @@
+{
+  "content": {
+    "navItems": [
+      {
+        "type": "dashboard",
+        "text": "Dashboard Kit",
+        "link": "/",
+        "icon": "dashboard"
+      },
+      {
+        "text": "Overview",
+        "link": "#",
+        "icon": "overview"
+      },
+      {
+        "text": "Tickets",
+        "link": "#",
+        "icon": "tickets"
+      },
+      {
+        "text": "Ideas",
+        "link": "#",
+        "icon": "ideas"
+      },
+      {
+        "text": "Contacts",
+        "link": "#",
+        "icon": "contacts"
+      },
+      {
+        "text": "Agents",
+        "link": "#",
+        "icon": "agents"
+      },
+      {
+        "text": "Articles",
+        "link": "#",
+        "icon": "articles"
+      },
+      {
+        "text": "Settings",
+        "link": "#",
+        "icon": "settings"
+      },
+      {
+        "text": "Subscription",
+        "link": "#",
+        "icon": "subscription"
+      }
+    ],
+    "navbar": {
+      "brand": {
+        "text": "Overview",
+        "link": "#"
+      },
+      "links": [
+        {
+          "type": "icon",
+          "link": "#",
+          "svg": "circle-icon"
+        },
+        {
+          "type": "icon",
+          "link": "#",
+          "svg": "bell-icon"
+        },
+        {
+          "type": "divider",
+          "svg": "vertical-line"
+        },
+        {
+          "type": "text",
+          "link": "#",
+          "text": "Jones Ferdinand"
+        },
+        {
+          "type": "icon",
+          "link": "#",
+          "svg": "photo-icon"
+        }
+      ]
+    },
+    "cards": [
+      { "title": "Unresolved", "value": 60 },
+      { "title": "Overdue", "value": 16 },
+      { "title": "Open", "value": 43 },
+      { "title": "On Hold", "value": 64 }
+    ],
+    "trends": {
+      "title": "Today's Trends",
+      "subtitle": "as of 25 May 2019, 09:41 PM",
+      "images": {
+        "today": "public/assets/images/today and yesterday.png",
+        "graph": "public/assets/images/graph screenshot.png"
+      },
+      "metrics": [
+        { "title": "Resolved", "value": 449 },
+        { "title": "Received", "value": 426 },
+        { "title": "Average first response time", "value": "33m" },
+        { "title": "Average response time", "value": "3h 8m" },
+        { "title": "Resolution with SLA", "value": "94%" }
+      ]
+    },
+    "tickets": {
+      "title": "Unresolved Tickets",
+      "group": "Support",
+      "items": [
+        { "title": "Waiting on Feature Request", "value": 4238 },
+        { "title": "Awaiting Customer Response", "value": 1005 },
+        { "title": "Awaiting Developer Fix", "value": 914 },
+        { "title": "Pending", "value": 281 }
+      ]
+    },
+    "tasks": {
+      "title": "Tasks",
+      "date": "Today",
+      "items": [
+        { "type": "create", "text": "Create new task", "icon": "add-icon" },
+        { "type": "task", "text": "Finish ticket update", "badge": "URGENT", "badgeType": "warning" },
+        { "type": "task", "text": "Create new ticket example", "badge": "NEW", "badgeType": "success" },
+        { "type": "task", "text": "Update ticket report", "badge": "DEFAULT", "badgeType": "secondary" }
+      ]
+    }
+  }
+}

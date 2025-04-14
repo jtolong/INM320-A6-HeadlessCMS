@@ -212,7 +212,25 @@ a.nav-link-overview{
   text-decoration: none;
 }
 
-.navbar-nav{
-  --bs-nav-link-padding-y: 0 !important;
-  --bs-nav-link-padding-x: 0 !important;
+
+.navbar {
+  display: flex;
+  align-items: center; /* Vertically align items in the navbar */
+  padding: 10px 20px; /* Add padding to the navbar */
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center; /* Vertically align brand and links */
+  justify-content: space-between; /* Place brand at the start and links at the end */
+}
+
+.navbar-brand {
+  margin: 0; /* Remove any extra margin */
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center; /* Vertically align links */
+  gap: 15px; /* Add spacing between links */
 }
