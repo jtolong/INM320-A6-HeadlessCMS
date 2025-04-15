@@ -12,7 +12,8 @@
 }
 
 a.nav-link.text-white:hover {
-  color: #DDE2FF !important; /* Ensure the color changes on hover */
+  color: #DDE2FF !important;
+  /* hover colour change */
 }
 
 .nav-item {
@@ -33,41 +34,47 @@ a.nav-link.text-white:hover {
 }
 
 li.nav-item {
-  --color: #9FA2B4; /* Default SVG color */
+  --color: #9FA2B4;
+  /* SVG color */
 }
 
 #menu li.nav-item svg path {
-  fill: var(--color); /* Apply default color */
+  fill: var(--color);
+  /* default color */
 }
 
 .dashboard-link {
   display: flex;
-  align-items: center; /* Vertically align SVG and text */
-  padding: 0.5rem 1rem; /* Add padding around the link */
+  align-items: center;
+  /* align SVG and text */
+  padding: 0.5rem 1rem;
+  /* padding around the link */
 }
 
 .dashboard-link svg {
-  margin-right: 8px; /* Add spacing between the SVG and text */
+  margin-right: 8px;
+  /* spacing between the SVG and text */
 }
 
 .navbar {
   display: flex;
-  align-items: center; /* Vertically align items in the navbar */
-  padding: 0.5rem 1rem; /* Ensure consistent padding with Dashboard Kit */
+  align-items: center;
+  /* align items in the navbar */
+  padding: 0.5rem 1rem;
+  /* padding for Dashboard Kit */
 }
 
-.d-flex.align-items-center {
-  gap: 8px; /* Add consistent spacing between items */
-}
 #menu li.nav-item:hover {
   background-color: #495057;
   cursor: pointer;
-  color: #DDE2FF !important; /* Ensure the color changes on hover */
+  color: #DDE2FF !important;
+  /* hover colour change */
   border-left: 3px solid rgba(221, 226, 255, 1);
 }
 
 #menu li.nav-item:hover svg path {
-  fill: #DDE2FF !important; /* Change SVG color on hover */
+  fill: #DDE2FF !important;
+  /* Change SVG color on hover */
 }
 
 #active {
@@ -76,7 +83,7 @@ li.nav-item {
   height: 56px;
 }
 
-/* Divider line set width height color and spacing */
+/* solid line styling */
 #solid {
   width: 100%;
   padding: none;
@@ -123,7 +130,8 @@ li.nav-item {
 }
 
 .fs-9 {
-  font-size: 0.5rem !important; /* 8px */
+  font-size: 0.5rem !important;
+  /* 8px */
 }
 
 .card-header>p {
@@ -139,21 +147,22 @@ li.nav-item {
 
 .float-right-1 img {
   float: right;
-  width: 25%; /* Adjust the width as needed */
+  width: 25%;
+
 }
 
 .float-right-2 img {
   float: right;
 }
 
-/* Ensure the card fills the height of the container */
+/* card needs to fill container*/
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Ensure the same-size divs are evenly spaced */
+/* keep divs the same*/
 .same-size {
   flex: 1;
   display: flex;
@@ -179,7 +188,7 @@ li.nav-item {
   color: rgba(159, 162, 180, 1);
 }
 
-/* Flex-grow for the graph card to make it expand */
+/* expand graph card */
 .card-graph {
   flex-grow: 1;
 }
@@ -192,13 +201,13 @@ li.nav-item {
   width: 100%;
 }
 
-/* Vertical rule styling */
+/* graph rule styling */
 .vr {
   border-left: 1px solid #DFE0EB;
   height: 100%;
 }
 
-/* Allow horizontal scrolling for rows */
+/* scrolling for rows */
 .row.flex-nowrap {
   width: 100%;
   height: auto;
@@ -210,23 +219,26 @@ li.nav-item {
 }
 
 h6.card-title-graph {
-  color: #252733 !important; /* Adjust the color as needed */
-  font-size: 1.25rem; /* Adjust the font size as needed */
-  font-weight: 700; /* Adjust the font weight as needed */
-  margin-bottom: 1rem; /* Adjust the margin as needed */
+  color: #252733 !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
-p.card-text-graph{
+
+p.card-text-graph {
   color: #9FA2B4 !important;
-  
+
 }
-.card-body h5{
+
+.card-body h5 {
   color: #9FA2B4 !important;
 }
-.display-4{
+
+.display-4 {
   color: #252733 !important;
 }
 
-a.nav-link-overview{
+a.nav-link-overview {
   color: #252733 !important;
   text-decoration: none;
 }
@@ -234,22 +246,22 @@ a.nav-link-overview{
 
 .navbar {
   display: flex;
-  align-items: center; /* Vertically align items in the navbar */
-  padding: 10px 20px; /* Add padding to the navbar */
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .container-fluid {
   display: flex;
-  align-items: center; /* Vertically align brand and links */
-  justify-content: space-between; /* Place brand at the start and links at the end */
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-brand {
-  margin: 0; /* Remove any extra margin */
+  margin: 0;
 }
 
 .navbar-nav {
   display: flex;
-  align-items: center; /* Vertically align links */
-  gap: 15px; /* Add spacing between links */
+  align-items: center;
+  gap: 15px;
 }

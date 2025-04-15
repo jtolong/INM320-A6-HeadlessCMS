@@ -81,10 +81,22 @@
       ]
     },
     "cards": [
-      { "title": "Unresolved", "value": 60 },
-      { "title": "Overdue", "value": 16 },
-      { "title": "Open", "value": 43 },
-      { "title": "On Hold", "value": 64 }
+      {
+        "title": "Unresolved",
+        "value": 60
+      },
+      {
+        "title": "Overdue",
+        "value": 16
+      },
+      {
+        "title": "Open",
+        "value": 43
+      },
+      {
+        "title": "On Hold",
+        "value": 64
+      }
     ],
     "trends": {
       "title": "Today's Trends",
@@ -94,31 +106,77 @@
         "graph": "public/assets/images/graph screenshot.png"
       },
       "metrics": [
-        { "title": "Resolved", "value": 449 },
-        { "title": "Received", "value": 426 },
-        { "title": "Average first response time", "value": "33m" },
-        { "title": "Average response time", "value": "3h 8m" },
-        { "title": "Resolution with SLA", "value": "94%" }
+        {
+          "title": "Resolved",
+          "value": 449
+        },
+        {
+          "title": "Received",
+          "value": 426
+        },
+        {
+          "title": "Average first response time",
+          "value": "33m"
+        },
+        {
+          "title": "Average response time",
+          "value": "3h 8m"
+        },
+        {
+          "title": "Resolution with SLA",
+          "value": "94%"
+        }
       ]
     },
     "tickets": {
       "title": "Unresolved Tickets",
       "group": "Support",
       "items": [
-        { "title": "Waiting on Feature Request", "value": 4238 },
-        { "title": "Awaiting Customer Response", "value": 1005 },
-        { "title": "Awaiting Developer Fix", "value": 914 },
-        { "title": "Pending", "value": 281 }
+        {
+          "title": "Waiting on Feature Request",
+          "value": 4238
+        },
+        {
+          "title": "Awaiting Customer Response",
+          "value": 1005
+        },
+        {
+          "title": "Awaiting Developer Fix",
+          "value": 914
+        },
+        {
+          "title": "Pending",
+          "value": 281
+        }
       ]
     },
     "tasks": {
       "title": "Tasks",
       "date": "Today",
       "items": [
-        { "type": "create", "text": "Create new task", "icon": "add-icon" },
-        { "type": "task", "text": "Finish ticket update", "badge": "URGENT", "badgeType": "warning" },
-        { "type": "task", "text": "Create new ticket example", "badge": "NEW", "badgeType": "success" },
-        { "type": "task", "text": "Update ticket report", "badge": "DEFAULT", "badgeType": "secondary" }
+        {
+          "type": "create",
+          "text": "Create new task",
+          "icon": "add-icon"
+        },
+        {
+          "type": "task",
+          "text": "Finish ticket update",
+          "badge": "URGENT",
+          "badgeType": "warning"
+        },
+        {
+          "type": "task",
+          "text": "Create new ticket example",
+          "badge": "NEW",
+          "badgeType": "success"
+        },
+        {
+          "type": "task",
+          "text": "Update ticket report",
+          "badge": "DEFAULT",
+          "badgeType": "secondary"
+        }
       ]
     }
   }

@@ -9,34 +9,38 @@ async function loadContent(jsonPath) {
     const data = await response.json();
     const content = data.content; // Access the "content" key
 
-    // Populate Dashboard Kit
-    const dashboardContainer = document.querySelector(".d-flex.flex-column.align-items-center");
-    if (dashboardContainer) {
-      const dashboardLink = document.createElement("a");
-      dashboardLink.href = content.navItems[0].link; // Assuming the first item is Dashboard Kit
-      dashboardLink.className =
-        "d-flex align-items-center p-3 justify-content-around pt-4 mb-md-0 me-md-auto mt-4 text-white text-decoration-none fs-4";
-      dashboardLink.innerHTML = `
-          <div class="d-flex align-items-center">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#3751FF" />
-      <path
-        d="M11 10C11 9.44772 11.4477 9 12 9H15.9905C18.2127 9 19.9333 9.60955 21.1524 10.8287C22.3841 12.0478 23 13.765 23 15.9803C23 18.2088 22.3841 19.9391 21.1524 21.1713C19.9333 22.3904 18.2127 23 15.9905 23H12C11.4477 23 11 22.5523 11 22V10Z"
-        fill="url(#paint0_linear_584_285)" />
-      <defs>
-        <linearGradient id="paint0_linear_584_285" x1="11" y1="9" x2="23" y2="23" gradientUnits="userSpaceOnUse">
-          <stop stop-color="white" stop-opacity="0.7" />
-          <stop offset="1" stop-color="white" />
-        </linearGradient>
-      </defs>
-    </svg>
-    <span class="ms-2">Dashboard Kit</span>
-  </div>
-      `;
-      dashboardContainer.prepend(dashboardLink); // Add Dashboard Kit at the top
-    }
+// Dashboard Kit
+const dashboardContainer = document.querySelector(".d-flex.flex-column.align-items-center");
+if (dashboardContainer) {
+  const dashboardLink = document.createElement("a");
+  dashboardLink.href = content.navItems[0].link; // Dashboard Kit separate from nav items
+  dashboardLink.className =
+    "d-flex align-items-center p-3 justify-content-around pt-4 mb-md-0 me-md-auto mt-4 text-white text-decoration-none fs-4";
 
-    // Populate Sidebar Navigation (navItems)
+  // Dashboard Kit SVG
+  dashboardLink.innerHTML = `
+    <div class="d-flex align-items-center">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#3751FF" />
+        <path
+          d="M11 10C11 9.44772 11.4477 9 12 9H15.9905C18.2127 9 19.9333 9.60955 21.1524 10.8287C22.3841 12.0478 23 13.765 23 15.9803C23 18.2088 22.3841 19.9391 21.1524 21.1713C19.9333 22.3904 18.2127 23 15.9905 23H12C11.4477 23 11 22.5523 11 22V10Z"
+          fill="url(#paint0_linear_584_285)" />
+        <defs>
+          <linearGradient id="paint0_linear_584_285" x1="11" y1="9" x2="23" y2="23" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0.7" />
+            <stop offset="1" stop-color="white" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="ms-2">Dashboard Kit</span>
+    </div>
+  `;
+
+  // Add the link to the container
+  dashboardContainer.prepend(dashboardLink);
+}
+
+    // Sidebar Navigation (navItems)
     const menu = document.getElementById("menu");
     if (menu) {
       const svgIcons = {
@@ -123,12 +127,12 @@ async function loadContent(jsonPath) {
     `
       };
 
-      // Skip the first item (Dashboard Kit) when populating the sidebar
+      // Skip Dashboard Kit when loading the sidebar
       content.navItems.slice(1).forEach((item) => {
         const li = document.createElement("li");
         li.className = "nav-item m-3";
 
-        // Use item.icon to fetch the corresponding SVG
+        // nav-item SVGs
         li.innerHTML = `
       <a href="${item.link}" class="nav-link text-white">
         ${svgIcons[item.icon] || ""} <!-- Use the SVG if it exists -->
@@ -138,24 +142,23 @@ async function loadContent(jsonPath) {
 
         menu.appendChild(li);
 
-        // Add the <hr> element after "Articles"
+        // solid line between Articles and Settings
         if (item.text === "Articles") {
           const hr = document.createElement("hr");
           hr.id = "solid";
-          hr.style.border = "1px solid #ffffff"; // Optional: Add inline styles for visibility
           menu.appendChild(hr);
         }
       });
 
 
 
-      // Populate Navbar Brand
+      // Navbar title
       const navbarBrand = document.getElementById("navbar-brand");
       if (navbarBrand) {
         navbarBrand.textContent = content.navbar.brand.text;
         navbarBrand.href = content.navbar.brand.link;
       }
-      // Populate Navbar
+      // Navbar links - photo, etc. 
       const navbarLinks = document.getElementById("navbar-links");
       if (navbarLinks) {
         const svgs = {
@@ -225,7 +228,7 @@ async function loadContent(jsonPath) {
         });
       }
 
-      // Populate Cards
+      // cards section 1
       const cardsContainer = document.getElementById("cards-container");
       if (cardsContainer) {
         content.cards.forEach((card) => {
@@ -243,7 +246,7 @@ async function loadContent(jsonPath) {
         });
       }
 
-      // Populate Trends
+      // card section 2
       const trendsContainer = document.getElementById("trends-container");
       if (trendsContainer) {
         trendsContainer.innerHTML = `
@@ -287,10 +290,10 @@ async function loadContent(jsonPath) {
       }
     }
 
-     // Populate Unresolved Tickets Section
-     const ticketsContainer = document.getElementById("tickets-container");
-     if (ticketsContainer) {
-       ticketsContainer.innerHTML = `
+    // card section 3-1
+    const ticketsContainer = document.getElementById("tickets-container");
+    if (ticketsContainer) {
+      ticketsContainer.innerHTML = `
          <div class="card shadow-sm">
            <div class="card-header bg-white fw-bold fs-4">
              <p>${content.tickets.title}</p>
@@ -300,24 +303,24 @@ async function loadContent(jsonPath) {
            </div>
            <ul class="list-group list-group-flush">
              ${content.tickets.items
-               .map(
-                 (item) => `
+          .map(
+            (item) => `
                    <li class="list-group-item d-flex justify-content-between">
                      ${item.title}
                      <span>${item.value}</span>
                    </li>
                  `
-               )
-               .join("")}
+          )
+          .join("")}
            </ul>
          </div>
        `;
-     }
+    }
 
-     // Populate Tasks Section
-     const tasksContainer = document.getElementById("tasks-container");
-     if (tasksContainer) {
-       tasksContainer.innerHTML = `
+    // cards section 3-2
+    const tasksContainer = document.getElementById("tasks-container");
+    if (tasksContainer) {
+      tasksContainer.innerHTML = `
          <div class="card shadow-sm">
            <div class="card-header bg-white fw-bold float-left fs-4">
              <p>${content.tasks.title}</p>
@@ -327,9 +330,9 @@ async function loadContent(jsonPath) {
            </div>
            <ul class="list-group list-group-flush">
              ${content.tasks.items
-               .map((item) => {
-                 if (item.type === "create") {
-                   return `
+          .map((item) => {
+            if (item.type === "create") {
+              return `
                      <li class="list-group-item d-flex justify-content-between fs-6" id="create">
                        ${item.text}
                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -339,28 +342,28 @@ async function loadContent(jsonPath) {
                        </svg>
                      </li>
                    `;
-                 } else {
-                   return `
+            } else {
+              return `
                      <li class="list-group-item d-flex justify-content-between">
                        <input type="checkbox" class="checkmark">
                        ${item.text}
                        <span class="badge bg-${item.badgeType}">${item.badge}</span>
                      </li>
                    `;
-                 }
-               })
-               .join("")}
+            }
+          })
+          .join("")}
            </ul>
          </div>
        `;
-     }
+    }
 
-    // Close the try block properly
+    // check for the sections to make sure it works
   } catch (error) {
     console.error("Error loading content:", error);
   }
 }
-// Call the function after DOM is loaded
+// load the page
 document.addEventListener("DOMContentLoaded", () => {
   loadContent("public/assets/data.json");
 });
