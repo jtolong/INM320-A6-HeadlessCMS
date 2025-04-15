@@ -287,80 +287,73 @@ async function loadContent(jsonPath) {
       }
     }
 
-// Populate Unresolved Tickets Section
-const ticketsContainer = document.getElementById("tickets-container");
-if (ticketsContainer) {
-  ticketsContainer.innerHTML = `
-    <div class="col-lg-6">
-      <div class="card shadow-sm">
-        <div class="card-header bg-white fw-bold fs-4">
-          <p>${content.tickets.title}</p>
-          <a href="#" class="float-end text-primary fs-8">View details</a>
-          <br>
-          <a href="#" class="float-left text-small">Group: ${content.tickets.group}</a>
-        </div>
-        <ul class="list-group list-group-flush">
-          ${content.tickets.items
-            .map(
-              (item) => `
-                <li class="list-group-item d-flex justify-content-between">
-                  ${item.title}
-                  <span>${item.value}</span>
-                </li>
-              `
-            )
-            .join("")}
-        </ul>
-      </div>
-    </div>
-  `;
-}
+     // Populate Unresolved Tickets Section
+     const ticketsContainer = document.getElementById("tickets-container");
+     if (ticketsContainer) {
+       ticketsContainer.innerHTML = `
+         <div class="card shadow-sm">
+           <div class="card-header bg-white fw-bold fs-4">
+             <p>${content.tickets.title}</p>
+             <a href="#" class="float-end text-primary fs-8">View details</a>
+             <br>
+             <a href="#" class="float-left text-small">Group: ${content.tickets.group}</a>
+           </div>
+           <ul class="list-group list-group-flush">
+             ${content.tickets.items
+               .map(
+                 (item) => `
+                   <li class="list-group-item d-flex justify-content-between">
+                     ${item.title}
+                     <span>${item.value}</span>
+                   </li>
+                 `
+               )
+               .join("")}
+           </ul>
+         </div>
+       `;
+     }
 
-// Populate Tasks Section
-const tasksContainer = document.getElementById("tasks-container");
-if (tasksContainer) {
-  tasksContainer.innerHTML = `
-    <div class="col-lg-6">
-      <div class="card shadow-sm">
-        <div class="card-header bg-white fw-bold float-left fs-4">
-          <p>${content.tasks.title}</p>
-          <a href="#" class="float-end text-primary fs-8">View all</a>
-          <br>
-          <a href="#" class="text-small">${content.tasks.date}</a>
-        </div>
-        <ul class="list-group list-group-flush">
-          ${content.tasks.items
-            .map((item) => {
-              if (item.type === "create") {
-                return `
-                  <li class="list-group-item d-flex justify-content-between fs-6" id="create">
-                    ${item.text}
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="24" height="24" rx="8" fill="#F0F1F7" />
-                      <path d="M12 7V17" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round" />
-                      <path d="M17 12L7 12" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                  </li>
-                `;
-              } else {
-                return `
-                  <li class="list-group-item d-flex justify-content-between">
-                    <input type="checkbox" class="checkmark">
-                    ${item.text}
-                    <span class="badge bg-${item.badgeType}">${item.badge}</span>
-                  </li>
-                `;
-              }
-            })
-            .join("")}
-        </ul>
-      </div>
-    </div>
-  `;
-}
-
-
-
+     // Populate Tasks Section
+     const tasksContainer = document.getElementById("tasks-container");
+     if (tasksContainer) {
+       tasksContainer.innerHTML = `
+         <div class="card shadow-sm">
+           <div class="card-header bg-white fw-bold float-left fs-4">
+             <p>${content.tasks.title}</p>
+             <a href="#" class="float-end text-primary fs-8">View all</a>
+             <br>
+             <a href="#" class="text-small">${content.tasks.date}</a>
+           </div>
+           <ul class="list-group list-group-flush">
+             ${content.tasks.items
+               .map((item) => {
+                 if (item.type === "create") {
+                   return `
+                     <li class="list-group-item d-flex justify-content-between fs-6" id="create">
+                       ${item.text}
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <rect width="24" height="24" rx="8" fill="#F0F1F7" />
+                         <path d="M12 7V17" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round" />
+                         <path d="M17 12L7 12" stroke="#9FA2B4" stroke-width="2" stroke-linecap="round" />
+                       </svg>
+                     </li>
+                   `;
+                 } else {
+                   return `
+                     <li class="list-group-item d-flex justify-content-between">
+                       <input type="checkbox" class="checkmark">
+                       ${item.text}
+                       <span class="badge bg-${item.badgeType}">${item.badge}</span>
+                     </li>
+                   `;
+                 }
+               })
+               .join("")}
+           </ul>
+         </div>
+       `;
+     }
 
     // Close the try block properly
   } catch (error) {
